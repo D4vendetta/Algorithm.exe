@@ -1,7 +1,6 @@
 N = int(input())
 ary = []
 ary.append(1)
-result = 0
 
 for i in range(0, 100000):
     ary.append(ary[i] + (6*(i+1)))
