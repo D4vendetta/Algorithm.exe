@@ -1,5 +1,5 @@
 import sys
-cost = 0
+cost, j = 0, -1
 
 
 n = int(sys.stdin.readline())
@@ -7,16 +7,16 @@ distance = list(map(int,sys.stdin.readline().split()))
 price = list(map(int,sys.stdin.readline().split()))
 
 min_cost = min(price)
-j = -1
 
 for i in range(n-1) :
     if i < j : 
         continue
+
     if price[i] == min_cost :
         cost += sum(distance[i:]) * price[i]
         break
 
-    if i == n-2 : 
+    elif i == n-2 : 
         cost += price[i]*price[i-1]
         break
 
